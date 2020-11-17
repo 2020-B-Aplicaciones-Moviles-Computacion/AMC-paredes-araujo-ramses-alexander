@@ -1,1 +1,2 @@
 pepito
+implementar resta negativos
