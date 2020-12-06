@@ -150,6 +150,7 @@ fun main (){
     // acumula los valores del array
     // [1,2,3,4,5]
 
+    println("ACUMULADOR")
     val respuestaReduce = arregloMutable
         .reduce{ acumulado,valorActualIteracion->
             return@reduce acumulado + valorActualIteracion
