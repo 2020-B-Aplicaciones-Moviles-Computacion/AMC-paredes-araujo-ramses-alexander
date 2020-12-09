@@ -1,4 +1,5 @@
 import java.io.*
+import java.text.BreakIterator
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -10,9 +11,9 @@ fun main (){
     //Lista de entrenadores
     val listaEntrenadores: ArrayList<Entrenador> = cargarFicheroEntrenador()
     //Cargar Pokemon
-    var listaPokemon: ArrayList<Pokemon> = cargarFicheroPokemon()
+    val listaPokemon: ArrayList<Pokemon> = cargarFicheroPokemon()
     //Cargar Capturas
-    var listaCapturas : ArrayList<Captura> = cargarFicheroCapturas(listaEntrenadores,listaPokemon)
+    val listaCapturas : ArrayList<Captura> = cargarFicheroCapturas(listaEntrenadores,listaPokemon)
 
     var seleccion: Int =0
     var seleccionRead:Int =0
@@ -27,7 +28,8 @@ fun main (){
         println("1- (Create) Ingresar un nuevo entrenador, pokemon o capturar\n" +
                 "2- (Read)   Mostrar entrenadores, pokemon o capturas\n" +
                 "3- (Update) Actualizar un entrenador, pokemon o una captura\n" +
-                "4- (Delete) Eliminar un entrenador, pokemon o una captura\n")
+                "4- (Delete) Eliminar un entrenador, pokemon o una captura\n" +
+                "Ingrese 0 si desea salir del programa.\n")
         try {
             seleccion = readLine()?.toInt() as Int
             println("Su seleccion es: ${seleccion} ")
@@ -63,8 +65,10 @@ fun main (){
                                     auxEntren = buscarEntrenadorID(listaEntrenadores,entrCap)
                                     if(auxEntren!=null){
                                         listaCapturas.add(capturaPokemon(auxEntren,listaPokemon))
+                                        println(" Capturado Exitosamente !!! ")
                                     }else{
                                         println("El entrenador no existe")
+                                        println(" Captura fallida. ")
                                     }
                                 }catch (err: NumberFormatException){
 
@@ -83,7 +87,7 @@ fun main (){
                     }
 
                 }
-                2->{
+                2->{//-----------------------------------------------------
                     println("Desea mostrar: " +
                             "\n1- Entrenadores" +
                             "\n2- Pokemon" +
@@ -101,8 +105,22 @@ fun main (){
                                 imprimirPokemon(listaPokemon)
                             }
                             3->{
-                                println("CAPTURAS")
-                                imprimirCapturas(listaCapturas)
+                                var entrCap:String = ""
+                                var auxEntren:Entrenador? = null
+                                //println("CAPTURAS")
+                                //imprimirCapturas(listaCapturas)
+                                println("Ingrese el id del entrenador que desea revisar sus capturas")
+                                try {
+                                    entrCap = readLine()?.toString() as String
+                                    auxEntren = buscarEntrenadorID(listaEntrenadores,entrCap)
+                                    if(auxEntren!=null){
+                                        imprimirCapturasEntrenador(listaCapturas,auxEntren.idEntrenador)
+                                    }else{
+                                        println("El entrenador no existe")
+                                    }
+                                }catch (err: NumberFormatException){
+
+                                }
                             }
                             else->{}
 
@@ -114,9 +132,230 @@ fun main (){
                                 "=================================================\n"
                         )
                     }
+                }
+                3->{//----------------------------------------------------------
+                    println("Desea actualizar: " +
+                            "\n1- Entrenadores" +
+                            "\n2- Pokemon")
+                    try {
+                        seleccionRead = readLine()?.toInt() as Int
+                        println("Su seleccion es: ${seleccion} ")
+                        when(seleccionRead){
+                            1->{
+                                println("Ingrese el id del entrenador a actualizar:\n")
+                                //imprimirEntrenadores(listaEntrenadores)
+                                //-------------
+                                try {
+
+                                    var entrBusq = readLine()?.toString() as String
+                                    var auxEntren:Entrenador? = buscarEntrenadorID(listaEntrenadores,entrBusq)
+                                    var updEntren:Entrenador? = null
+                                    if(auxEntren!=null){
+                                        println("Informacion actual del entrenador:")
+                                        println(auxEntren)
+                                        updEntren = actualizarEntrenador(auxEntren)
+                                        //actualizarEntrenador me recibe al anterior entrenador y me devuelve el nuevo
+                                        listaEntrenadores.removeIf { entrenador->
+                                            (entrenador.idEntrenador.equals(entrBusq))
+                                        }
+                                        if (updEntren != null) {
+                                            var capturaAux:Captura? = null
+                                            listaEntrenadores.add(updEntren)
+                                            //-----------------------------
+                                            //aqui actualizo la lista de capturas
+                                            listaCapturas.forEach {  cap->
+                                                if (cap.entrenador.idEntrenador.equals(updEntren.idEntrenador)){
+                                                    capturaAux=cap
+                                                }
+                                            }
+                                            listaCapturas.removeIf { cap->
+                                                cap.entrenador.idEntrenador.equals(updEntren.idEntrenador)
+                                            }
+                                            if(capturaAux!=null){
+                                                listaCapturas.add(Captura(
+                                                    updEntren,
+                                                    capturaAux!!.pokemon,
+                                                    capturaAux!!.fechaCaptura,
+                                                    capturaAux!!.tipoPokeball
+                                                ))
+                                            }
+
+                                            //-----------------------------
+                                            println("Nueva informacion:\n" +
+                                                    "+${updEntren}")
+                                        }
 
 
+                                    }else{
+                                        println("El entrenador no existe")
+                                    }
+                                }catch (err: NumberFormatException){
 
+                                }
+                                //--------------
+                            }
+                            2->{
+                                println("Ingrese el Numero del Pokemon que desea actualizar\n")
+                                imprimirPokemon(listaPokemon)
+                                try {
+
+                                    var pokeBusq = readLine()?.toInt() as Int
+                                    var auxPok:Pokemon? = buscarPokemonNumP(listaPokemon ,pokeBusq)
+                                    var updPok:Pokemon? = null
+                                    if(auxPok!=null){
+                                        println("Informacion actual del pokemon:")
+                                        println(auxPok)
+                                        updPok = actualizarPokemon(auxPok)
+                                        //actualizarEntrenador me recibe al anterior entrenador y me devuelve el nuevo
+                                        listaPokemon.removeIf { pokem->
+                                            (pokem.nPokedex==pokeBusq)
+                                        }
+                                        if (updPok != null) {
+                                            var capturaAux:Captura? = null
+                                            listaPokemon.add(updPok)
+
+                                            //-----------------------------
+                                            //aqui actualizo la lista de capturas
+                                            listaCapturas.forEach {  cap->
+                                                if (cap.pokemon.nPokedex.equals(updPok.nPokedex)){
+                                                    capturaAux=cap
+                                                }
+                                            }
+                                            listaCapturas.removeIf { cap->
+                                                cap.pokemon.nPokedex.equals(updPok.nPokedex)
+                                            }
+                                            listaCapturas.add(Captura(
+                                                capturaAux!!.entrenador,
+                                                updPok,
+                                                capturaAux!!.fechaCaptura,
+                                                capturaAux!!.tipoPokeball
+                                            ))
+                                            //---------------------------------
+                                            println("Nueva informacion:\n" +
+                                                    "+${updPok}")
+                                        }
+
+
+                                    }else{
+                                        println("El pokemon no existe")
+                                    }
+                                }catch (err: NumberFormatException){
+
+                                }
+                            }
+                            else->{
+
+                            }
+
+                        }
+
+                    } catch (eRead1:NumberFormatException){
+                        println("=================================================\n" +
+                                "ERROR: Por favor ingrese correctamente una opcion\n"+
+                                "=================================================\n"
+                        )
+                    }
+                }
+                4->{
+                    println("Desea Eliminar: " +
+                            "\n1- Entrenadores" +
+                            "\n2- Pokemon")
+                    try {
+                        seleccionRead = readLine()?.toInt() as Int
+                        println("Su seleccion es: ${seleccion} ")
+                        when(seleccionRead){
+                            1->{
+                                println("Ingrese el id del entrenador a eliminar:\n")
+                                //imprimirEntrenadores(listaEntrenadores)
+                                //-------------
+                                try {
+
+                                    var entrBusq = readLine()?.toString() as String
+                                    var auxEntren:Entrenador? = buscarEntrenadorID(listaEntrenadores,entrBusq)
+                                    var seguro:String? =""
+                                    if(auxEntren!=null){
+                                        println("Informacion del entrenador a eliminar:")
+                                        println(auxEntren)
+                                        //actualizarEntrenador me recibe al anterior entrenador y me devuelve el nuevo
+                                    try{
+                                        println("Esta seguro de eliminar el entrenador?\n" +
+                                                "Ingrese 1 si esta seguro\n" +
+                                                "Ingrese 0 si no desea eliminarlo")
+                                        seguro = readLine()
+                                        if (seguro.equals("1")){
+                                            listaCapturas.removeIf { captura->
+                                                captura.entrenador.idEntrenador.equals(entrBusq)
+                                            }
+                                            listaEntrenadores.removeIf { entrenador->
+                                                (entrenador.idEntrenador.equals(entrBusq))
+                                            }
+                                        }else{
+                                            println("Se cancelo la eliminacion")
+                                        }
+
+                                    }catch (eRead1:NumberFormatException){
+
+                                    }
+
+
+                                    }else{
+                                        println("El entrenador no existe")
+                                    }
+                                }catch (err: NumberFormatException){
+
+                                }
+                                //--------------
+                            }
+                            2->{
+                                println("Ingrese el Numero del Pokemon que desea eliminar\n")
+                                imprimirPokemon(listaPokemon)
+                                try {
+
+                                    var pokeBusq = readLine()?.toInt() as Int
+                                    var auxPok:Pokemon? = buscarPokemonNumP(listaPokemon ,pokeBusq)
+                                    var seguro:String? = ""
+                                    if(auxPok!=null){
+                                        println("Informacion actual del pokemon:")
+                                        println(auxPok)
+                                        try{
+                                            println("Esta seguro de eliminar el pokemon?\n" +
+                                                    "Ingrese 1 si esta seguro\n" +
+                                                    "Ingrese 0 si no desea eliminarlo")
+                                            seguro = readLine()
+                                            if (seguro.equals("1")){
+                                                listaCapturas.removeIf { captura->
+                                                    captura.pokemon.nPokedex.equals(pokeBusq)
+                                                }
+                                                listaPokemon.removeIf { pokem->
+                                                    (pokem.nPokedex==pokeBusq)
+                                                }
+
+                                            }else{
+                                                println("Se cancelo la eliminacion")
+                                            }
+
+                                        }catch (eRead1:NumberFormatException){
+
+                                        }
+
+
+                                    }else{
+                                        println("El pokemon no existe")
+                                    }
+                                }catch (err: NumberFormatException){
+
+                                }
+                            }
+                            else->{}
+
+                        }
+
+                    } catch (eRead1:NumberFormatException){
+                        println("=================================================\n" +
+                                "ERROR: Por favor ingrese correctamente una opcion\n"+
+                                "=================================================\n"
+                        )
+                    }
                 }
                 0->{
                     guardarFicheroEntrenador(listaEntrenadores)
@@ -156,6 +395,18 @@ fun imprimirCapturas(listaCapturas: ArrayList<Captura>
 ){
     listaCapturas.forEach {captura->
         println("Valor: ${captura}")
+    }
+
+}
+fun imprimirCapturasEntrenador(
+    listaCapturas: ArrayList<Captura>,
+    idEntrenador: String?
+){
+    listaCapturas.forEach {captura->
+        if(captura.entrenador.idEntrenador.equals(idEntrenador)){
+            println("Valor: ${captura}")
+        }
+
     }
 
 }
@@ -241,9 +492,9 @@ fun ingresoEntrenador(): Entrenador?{
                 "=================================================\n")
         flag = false
     }
-        if (flag){
-            return Entrenador(idEntrenador,nombre,genero, Date(año,mes,dia),true)
-        }
+    if (flag){
+        return Entrenador(idEntrenador,nombre,genero, Date(año,mes,dia),true)
+    }
     return null
 }
 
@@ -316,8 +567,107 @@ fun capturaPokemon(
     } catch (e: NumberFormatException ){
         pokeball="PokeBall"
     }
-    println(" nununununununasdfasdunun ${listaPokemon.size}")
+
     return Captura(entrenador,listaPokemon.get((Math.random()*(listaPokemon.size)).toInt()),Date(),pokeball)
+}
+//Actualizaciones
+//------------------------------------------------------------
+fun actualizarEntrenador(
+    entrenador: Entrenador?
+): Entrenador?{
+    var nombre: String? = ""
+    var genero: Char? = null
+    var fechaNac: String? = ""
+
+    var activoStr:String?=""
+    var activo:Boolean = false
+
+    var flag = true
+    var auxFech = 0
+
+    var dia =0
+    var mes =0
+    var año =0
+    try {
+        println("Ingrese su nuevo nombre (Solo letras)")
+        nombre = readLine()?.toString() as String
+        println("Ingrese su genero ( M - F )")
+        genero = readLine()?.toCharArray()?.get(0)
+        println("Ingrese su fecha de nacimiento aaaa/mm/dd")
+        fechaNac = readLine()
+
+
+        val tokFecha = StringTokenizer(fechaNac,"/")
+        while (tokFecha.hasMoreTokens()) {
+            when(auxFech){
+                0 ->{
+                    año = tokFecha.nextToken().toInt()
+                }
+                1->{
+                    mes = tokFecha.nextToken().toInt()
+                }
+                2->{
+                    dia = tokFecha.nextToken().toInt()
+                }
+            }
+            auxFech++
+        }
+
+        println("Desea cambiar el estado del entrenador?\n" +
+                "Estado actual: ${entrenador?.activo}\n" +
+                "Ingrese 1 si desea Activarlo\n" +
+                "Ingrese 0 si desea Desactivarlo")
+        activoStr = readLine()
+        if (activoStr.equals("1")){
+            activo= true
+        }
+
+    }catch (eRead1:NumberFormatException){
+        println("=================================================\n" +
+                "ERROR: Por favor ingrese correctamente lo solicitado\n"+
+                "=================================================\n")
+        flag = false
+    }
+    if (flag){
+        return Entrenador(entrenador?.idEntrenador,nombre,genero, Date(año,mes,dia),activo)
+    }
+    return null
+}
+
+fun actualizarPokemon(
+    pokemon: Pokemon?
+): Pokemon?{
+    var nPokedex: Int = 0
+    var nombre: String = ""
+    var genero: Char = ' '
+    var lifePoints: Double = 0.0
+    var fuerza: Double = 0.0
+
+    var flag = true
+
+    try {
+        println("Ingrese el nuevo nombre (Solo letras)")
+        nombre = readLine()?.toString() as String
+        println("Ingrese el genero ( M - F )")
+        genero = readLine().toString().get(0)
+        println("Ingrese los nuevos puntos de vida (0.0)")
+        lifePoints = readLine()?.toDouble()!!
+        println("Ingrese los nuevos puntos de fuerza (0.0)")
+        fuerza = readLine()?.toDouble()!!
+
+    }catch (eRead1:NumberFormatException){
+        println("=================================================\n" +
+                "ERROR: Por favor ingrese correctamente lo solicitado\n"+
+                "=================================================\n")
+        flag = false
+    }
+    if (flag){
+        if (pokemon!=null){
+            return Pokemon(pokemon.nPokedex,nombre,genero,lifePoints,fuerza)
+        }
+
+    }
+    return null
 }
 
 fun cargarFicheroEntrenador():ArrayList<Entrenador> {
@@ -630,7 +980,7 @@ fun guardarFicheroEntrenador(
         bfwriter.write(stringEntrenadores)
         //cierra el buffer intermedio
         bfwriter.close()
-        println("Archivo creado satisfactoriamente..")
+        println("Archivo entrenadores actualizado satisfactoriamente..")
     } catch (e: IOException) {
         e.printStackTrace()
     } finally {
@@ -669,7 +1019,7 @@ fun guardarFicheroPokemon(
         bfwriter.write(stringPokemon)
         //cierra el buffer intermedio
         bfwriter.close()
-        println("Archivo creado satisfactoriamente..")
+        println("Archivo pokemon actualizado satisfactoriamente..")
     } catch (e: IOException) {
         e.printStackTrace()
     } finally {
@@ -709,7 +1059,7 @@ fun guardarFicheroCaptura(
         bfwriter.write(stringEntrenadores)
         //cierra el buffer intermedio
         bfwriter.close()
-        println("Archivo creado satisfactoriamente..")
+        println("Archivo capturas actualizado satisfactoriamente..")
     } catch (e: IOException) {
         e.printStackTrace()
     } finally {
@@ -776,6 +1126,7 @@ class Captura(
         val linea = "\n" +
                 "\tEntrenador:    ${entrenador.nombre} ${entrenador.idEntrenador}\n" +
                 "\tPokemon:       ${pokemon.nombre} ${pokemon.nPokedex}\n" +
+                "\tNivel:"+
                 "\tFecha captura: ( ${fechaCaptura?.year} / ${fechaCaptura?.month} / ${fechaCaptura?.date} )\n" +
                 "\tTipo pokeball: ${tipoPokeball}"
         return linea
