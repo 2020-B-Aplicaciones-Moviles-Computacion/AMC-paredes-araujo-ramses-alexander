@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\USUARIO\\Desktop\\Universidad\\repos\\repaaac\\AMC-paredes-araujo-ramses-alexander\\AndroidStudioProjects\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rUS-port\\values-en-rUS-port.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\USUARIO\\Desktop\\Universidad\\repos\\repaaac\\AMC-paredes-araujo-ramses-alexander\\AndroidStudioProjects\\app\\src\\main\\res\\values-en-rUS-port\\texto.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "57",
+                        "endColumns": "50",
+                        "endOffsets": "103"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "50",
+                        "endOffsets": "101"
+                    }
+                }
+            ]
+        }
+    ]
+}
