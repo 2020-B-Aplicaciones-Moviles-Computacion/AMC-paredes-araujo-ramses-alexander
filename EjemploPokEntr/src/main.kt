@@ -27,8 +27,8 @@ fun main (){
         println("Seleccione una opcion: ")
         println("1- (Create) Ingresar un nuevo entrenador, pokemon o capturar\n" +
                 "2- (Read)   Mostrar entrenadores, pokemon o capturas\n" +
-                "3- (Update) Actualizar un entrenador, pokemon o una captura\n" +
-                "4- (Delete) Eliminar un entrenador, pokemon o una captura\n" +
+                "3- (Update) Actualizar un entrenador, pokemon \n" +
+                "4- (Delete) Eliminar un entrenador, pokemon\n" +
                 "Ingrese 0 si desea salir del programa.\n")
         try {
             seleccion = readLine()?.toInt() as Int
@@ -196,7 +196,7 @@ fun main (){
                             }
                             2->{
                                 println("Ingrese el Numero del Pokemon que desea actualizar\n")
-                                imprimirPokemon(listaPokemon)
+                                //imprimirPokemon(listaPokemon)
                                 try {
 
                                     var pokeBusq = readLine()?.toInt() as Int
@@ -553,12 +553,15 @@ fun capturaPokemon(
     var seleccion = 1
     try {
         println("Ingrese el tipo de pokeball que desea utilizar de pokedex\n" +
-                "1- Pokeball")
+                "1- PokeBall\n2-SuperBall")
 
         seleccion = readLine()?.toInt() as Int
         when(seleccion){
             1->{
                 pokeball="PokeBall"
+            }
+            2->{
+                pokeball="SuperBall"
             }
             else->{
                 println("No se comprendio, se utilizara una PokeBall")
@@ -1126,7 +1129,6 @@ class Captura(
         val linea = "\n" +
                 "\tEntrenador:    ${entrenador.nombre} ${entrenador.idEntrenador}\n" +
                 "\tPokemon:       ${pokemon.nombre} ${pokemon.nPokedex}\n" +
-                "\tNivel:"+
                 "\tFecha captura: ( ${fechaCaptura?.year} / ${fechaCaptura?.month} / ${fechaCaptura?.date} )\n" +
                 "\tTipo pokeball: ${tipoPokeball}"
         return linea
