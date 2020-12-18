@@ -10,8 +10,8 @@ class BaseDatosMemoria {
         }
         val arregloEntrenadores = arrayListOf<BEntrenador>()
         fun cagarEntrenadores(){
-            arregloEntrenadores.add(BEntrenador("UNO","DES"))
-            arregloEntrenadores.add(BEntrenador("DOS","DES2"))
+            arregloEntrenadores.add(BEntrenador("UNO","DES",null))
+            arregloEntrenadores.add(BEntrenador("DOS","DES2",null))
         }
     }
 

@@ -1,4 +1,10 @@
 <resources>
-    <string name="app_name">AplicacionMoviles</string>
+    <string name="app_name" translatable="false">AplicacionMoviles</string>
+
     <string name="mensaje">Hola Amigos</string>
+    <string-array name="string_array_opciones_dialogo">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
 </resources>

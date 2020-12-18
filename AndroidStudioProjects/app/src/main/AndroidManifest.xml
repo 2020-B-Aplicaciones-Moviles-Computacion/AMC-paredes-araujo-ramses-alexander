@@ -9,7 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AplicacionMoviles">
-        <activity android:name=".BListView"></activity>
+        <activity android:name=".FIntentConRespuesta"></activity>
+        <activity android:name=".CIntentExplicitoParametros" />
+        <activity android:name=".BListView">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ACicloVida" />
         <activity android:name=".MainActivity">
             <intent-filter>
