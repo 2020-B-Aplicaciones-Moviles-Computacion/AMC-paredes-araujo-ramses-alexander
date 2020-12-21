@@ -1,6 +1,5 @@
 package com.example.aplicacionmoviles
 
-import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -75,6 +74,12 @@ class MainActivity : AppCompatActivity() {
         ).setOnClickListener { irActividad(
             FIntentConRespuesta::class.java
         ) }
+        val botonIrRecyclerView = findViewById<Button>(R.id.btn_ir_recycler_view)
+        botonIrRecyclerView.setOnClickListener {
+            irActividad(
+                GRecyclerView::class.java
+            )
+        }
     }
 
     fun irActividad(
