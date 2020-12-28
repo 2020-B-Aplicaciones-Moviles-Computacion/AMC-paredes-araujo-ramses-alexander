@@ -80,6 +80,12 @@ class MainActivity : AppCompatActivity() {
                 GRecyclerView::class.java
             )
         }
+        val botonIrHttp = findViewById<Button>(R.id.btn_ir_http)
+        botonIrHttp.setOnClickListener {
+            irActividad(
+                HHttpActivity::class.java
+            )
+        }
     }
 
     fun irActividad(
