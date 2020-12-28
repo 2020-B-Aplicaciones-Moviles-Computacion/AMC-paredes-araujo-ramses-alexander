@@ -9,7 +9,7 @@ import org.w3c.dom.Text
 
 class FRecyclerViewAdaptadorNombreCedula (
     private val listaEntrenador:  List<BEntrenador>,
-    private val contexto:Class<*>,
+    private val contexto:GRecyclerView,
     private val recyclerView: androidx.recyclerview.widget.RecyclerView
 ): androidx.recyclerview.widget.RecyclerView.Adapter<
         FRecyclerViewAdaptadorNombreCedula.MyViewHolder
@@ -33,6 +33,7 @@ class FRecyclerViewAdaptadorNombreCedula (
         fun añadirLike(){
             this.numeroLikes = this.numeroLikes+1
             likesTextView.text = this.numeroLikes.toString()
+            contexto.aumentarTotalLikes()
         }
     }
 
