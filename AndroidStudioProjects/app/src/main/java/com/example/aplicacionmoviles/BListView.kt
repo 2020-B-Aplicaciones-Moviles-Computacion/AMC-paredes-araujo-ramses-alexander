@@ -21,11 +21,6 @@ class BListView : AppCompatActivity() {
         val listaNumeros = BaseDatosMemoria.arregloEnteros
         val listaEntrenadores = BaseDatosMemoria.arregloEntrenadores
 
-        //listaNumeros.add(1)
-        //listaNumeros.add(2)
-        //listaNumeros.add(3)
-        //listaNumeros.add(4)
-
         val adaptador = ArrayAdapter(
             this,
             android.R.layout.simple_list_item_1,// Layout (xml visual) existe en Android
@@ -35,7 +30,7 @@ class BListView : AppCompatActivity() {
         listView.adapter = adaptador
         //listaNumeros.add(5)
         //listaNumeros.add(6)
-        /*
+        /* Lo comentado es referente al mensaje de si y no
         listView.setOnItemLongClickListener { parent, view, position, id ->
             Log.i("intent-explicito","Hola: ${position}  ID: ${id}")
 
