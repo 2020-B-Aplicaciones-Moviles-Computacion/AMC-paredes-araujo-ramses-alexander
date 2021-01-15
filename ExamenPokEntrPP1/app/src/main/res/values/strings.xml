@@ -1,0 +1,176 @@
+<resources>
+    <string name="app_name">Examen Entrenador Pokemon</string>
+    <!--<string name="app_name">ExamenPokEntrPP1</string>-->
+
+    <!--Botones inicio y titulos -->
+    <string name="string_pokemon">Pokemon</string>
+    <string name="string_entrenador">Entrenador</string>
+    <!--Botones varios -->
+    <string name="btn_cancelar">Cancelar</string>
+    <string name="btn_regresar">Regresar</string>
+    <string name="btn_aceptar">Aceptar</string>
+    <string name="btn_salir">Salir</string>
+
+    <string name="op_si">Si</string>
+    <string name="op_no">No</string>
+
+
+
+
+    <!--ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss-->
+    <!--ACTIVIDADES ENTRENADOR -->
+
+    <!--LISTADO ENTRENADOR -->
+    <string name="tv_titulo_lista_entrenadores">Entrenadores</string>
+    <string name="boton_crear_entrenador">Crear</string>
+
+    <!--CUSTOM ROW ENTRENADOR -->
+    <string name="tv_lista_entrenadores_nombre_ci">Nombre y CI:</string>
+    <string name="tv_lista_entrenadores_genero">Genero:</string>
+    <string name="tv_lista_entrenadores_fechaNac">Fecha Nac:</string>
+    <string name="tv_lista_entrenadores_activo">Activo:</string>
+    <!--Ejemplos del custom row-->
+    <string name="ejemplo_tv_lista_entrenadores_nombre">Ramses Paredes</string>
+    <string name="ejemplo_tv_lista_entrenadores_ci">1765432097</string>
+    <string name="ejemplo_tv_lista_entrenadores_genero">M</string>
+    <string name="ejemplo_tv_lista_entrenadores_fechaNac">30/7/1998</string>
+    <string name="ejemplo_tv_lista_entrenadores_activo">true</string>
+    <string name="ejemplo_tv_lista_entrenadores_num">1</string>
+
+    <!--Mensajes menu contextual -->
+    <string name="cm_op_eliminar">Eliminar</string>
+    <string name="cm_op_editar">Editar</string>
+    <string name="cm_op_capturas">Capturas</string>
+
+
+    <!--Mensaje de popUpEliminar-->
+    <string name="ad_lista_entrenadores_eliminar">Eliminar entrenador</string>
+    <string name="ad_lista_entrenadores_mensaje_seg">¿Esta seguro de eliminar a </string>
+    <string name="toast_lista_entrenadores_mensaje_borrado_exitoso">Se elimino con exito el entrenador</string>
+
+
+    <!--ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss-->
+    <!--CREAR Y EDITAR ENTRENADOR -->
+
+
+    <string name="crear_entrenador_titulo">Crear Entrenador</string>
+    <string name="editar_entrenador_titulo">Editar Entrenador</string>
+    <string name="crear_entrenador_id">Cedula:</string>
+    <string name="crear_entrenador_id_help"></string>
+    <string name="crear_entrenador_nombre">Nombre:</string>
+    <string name="crear_entrenador_nombre_help"></string>
+    <string name="crear_entrenador_genero">Genero:</string>
+    <string name="crear_entrenador_genero_hombre">Hombre</string>
+    <string name="crear_entrenador_genero_mujer">Mujer</string>
+    <string name="crear_entrenador_fechaNac">Fecha Nacimiento:</string>
+    <string name="crear_entrenador_fechaNac_but">Seleccione</string>
+    <string name="crear_entrenador_fechaNac_help">Fecha</string>
+    <string name="editar_entrenador_activo">Activo:</string>
+
+    <string name="toast_crear_entrenador_exitoso">Se añadio el entrenador</string>
+    <string name="toast_editar_entrenador_exitoso">Se edito el entrenador</string>
+
+    <!--ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss-->
+    <!--VISTAS CAPTURAS -->
+    <!--LISTADO CAPTURAS -->
+    <string name="tv_titulo_lista_capturas">capturas</string>
+    <string name="boton_crear_captura">Capturar</string>
+
+    <!--Custom row capturas-->
+    <string name="tv_lista_capturas_Npokedex">N.Pokedex:</string>
+    <string name="tv_lista_capturas_nombre">Nombre:</string>
+    <string name="tv_lista_capturas_genero">Genero:</string>
+    <string name="tv_lista_capturas_nivel">Nivel:</string>
+    <string name="tv_lista_capturas_fecha_captura">Fecha de captura:</string>
+    <string name="tv_lista_capturas_tipo_pokeball">Tipo de PokeBall:</string>
+    <string name="tv_lista_capturas_life_points">Puntos de vida:</string>
+    <string name="tv_lista_capturas_fuerza">Fuerza:</string>
+
+    <!--Custom row ejemplo capturas-->
+    <string name="tv_lista_capturas_ejemplo_Npokedex">1</string>
+    <string name="tv_lista_capturas_ejemplo_nombre">Bulbasaur</string>
+    <string name="tv_lista_capturas_ejemplo_genero">F</string>
+    <string name="tv_lista_capturas_ejemplo_nivel">10</string>
+    <string name="tv_lista_capturas_ejemplo_fecha_captura">8/1/2021</string>
+    <string name="tv_lista_capturas_ejemplo_tipo_pokeball">PokeBall:</string>
+    <string name="tv_lista_capturas_ejemplo_life_points">300</string>
+    <string name="tv_lista_capturas_ejemplo_fuerza">38</string>
+
+    <!--Crear captura-->
+    <string name="crear_captura_titulo">Capturar Pokemon</string>
+
+    <!--menu eliminar captura-->
+    <string name="ad_lista_capturas_eliminar">Eliminar Pokemon</string>
+    <string name="ad_lista_capturas_mensaje_seg">¿Esta seguro de eliminar la captura? </string>
+    <string name="toast_lista_capturas_mensaje_borrado_exitoso">Se elimino con exito la captura</string>
+
+    <string name="toast_crear_capturas_mensaje_exitoso">La captura fue exitosa</string>
+
+
+    <!--ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss-->
+    <!--VISTAS POKEMON-->
+    <!--LISTADO POKEMON -->
+
+    <string name="tv_titulo_lista_pokemon">Pokemon</string>
+
+    <string name="boton_crear_pokemon">Crear</string>
+
+    <!--CREACION Y EDICION ENTRENADOR-->
+
+    <string name="crear_pokemon_titulo">Crear Pokemon</string>
+    <string name="editar_pokemon_titulo">Editar Pokemon</string>
+    <string name="crear_pokemon_nPokedex">N.Pokedex:</string>
+    <string name="crear_pokemon_nPokedex_help">000</string>
+    <string name="crear_pokemon_nombre">Nombre:</string>
+    <string name="crear_pokemon_tipo">Tipo:</string>
+    <string name="crear_pokemon_altura">Altura(m):</string>
+    <string name="crear_pokemon_altura_help">0.0</string>
+    <string name="crear_pokemon_peso">Peso(kg):</string>
+    <string name="crear_pokemon_peso_help">0.0</string>
+
+    <string name="toast_crear_pokemon_exitoso">Se añadio el pokemon</string>
+
+    <!--Listado entrenadores-->
+
+    <!-- -->
+
+
+    <!--Listado pokemon-->
+    <string name="tv_lista_pokemon_Npokedex">N.Pokedex:</string>
+    <string name="tv_lista_pokemon_nombre">Nombre:</string>
+    <string name="tv_lista_pokemon_tipo">Tipo:</string>
+    <string name="tv_lista_pokemon_altura">Altura(m):</string>
+    <string name="tv_lista_pokemon_peso">Peso(kg):</string>
+
+
+    <string name="ad_lista_pokemon_eliminar">Eliminar Pokemon</string>
+    <string name="ad_lista_pokemon_mensaje_seg">¿Esta seguro de eliminar a </string>
+    <string name="toast_lista_pokemon_mensaje_borrado_exitoso">Se elimino con exito</string>
+    <string name="toast_pokemon_mensaje_actualizado_exitoso">Se actualizo con exito el pokemon</string>
+
+
+    <!--Ejemplos lista entrenadores -->
+    <string name="ejemplo_tv_lista_pokemon_Npokedex">1</string>
+    <string name="ejemplo_tv_lista_pokemon_nombre">Bulbasaur</string>
+    <string name="ejemplo_tv_lista_pokemon_tipo">Planta</string>
+    <string name="ejemplo_tv_lista_pokemon_altura">0.7</string>
+    <string name="ejemplo_tv_lista_pokemon_peso">6.9</string>
+
+    <!--TIPOS DE POKEMON-->
+    <string name="pokemon_type_1">Normal</string>
+    <string name="pokemon_type_2">Pelea</string>
+    <string name="pokemon_type_3">Volador</string>
+    <string name="pokemon_type_4">Veneno</string>
+    <string name="pokemon_type_5">Tierra</string>
+    <string name="pokemon_type_6">Roca</string>
+    <string name="pokemon_type_7">Bicho</string>
+    <string name="pokemon_type_8">Fantasma</string>
+    <string name="pokemon_type_9">Acero</string>
+    <string name="pokemon_type_10">Fuego</string>
+    <string name="pokemon_type_11">Agua</string>
+    <string name="pokemon_type_12">Planta</string>
+
+
+
+
+</resources>
