@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "331295853026",
+    "project_id": "moviles-computacion-gamenodepa",
+    "storage_bucket": "moviles-computacion-gamenodepa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:331295853026:android:2c5391ba9e9830242351bb",
+        "android_client_info": {
+          "package_name": "com.example.gamenode1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "331295853026-bi9f8qdba3gbbo4ssrgca8jtdo2prv3b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8-3ozfzxUARLyVbUlOHNgl0ZQdLXJrr8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "331295853026-bi9f8qdba3gbbo4ssrgca8jtdo2prv3b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

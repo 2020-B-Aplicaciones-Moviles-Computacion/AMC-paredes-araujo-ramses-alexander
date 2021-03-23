@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActividadAgregarJuegoBiblioteca">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_add_game_library_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24dp"
+            android:layout_margin="10dp"
+            android:text="@string/tv_add_game_library_title" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:layout_weight="4"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_add_game_library_select_game_text"
+                    android:layout_width="match_parent"
+                    android:textSize="18dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="@string/caracteristica_seleccionar_juego" />
+
+                <Spinner
+                    android:id="@+id/sp_add_game_library"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_margin="10dp" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv__add_game_library"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="8dp"
+                    tools:srcCompat="@tools:sample/avatars" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_add_game_library_type_text"
+                        android:layout_width="match_parent"
+                        android:textSize="18dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="@string/caracteristica_type" />
+
+                    <TextView
+                        android:id="@+id/tv_add_game_library_type"
+                        android:layout_width="match_parent"
+                        android:textSize="18dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="" />
+                    <TextView
+                        android:id="@+id/tv_add_game_library_date_text"
+                        android:layout_width="match_parent"
+                        android:textSize="18dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="@string/tv_add_game_library_date_text" />
+
+                    <TextView
+                        android:id="@+id/tv_add_game_library_date"
+                        android:layout_width="match_parent"
+                        android:textSize="18dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="" />
+                    <TextView
+                        android:id="@+id/tv_add_game_library_description_text"
+                        android:layout_width="match_parent"
+                        android:textSize="18dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="@string/caracteristica_descripcion" />
+
+                    <TextView
+                        android:id="@+id/tv_add_game_library_description"
+                        android:layout_width="match_parent"
+                        android:textSize="18dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="" />
+                    <TextView
+                        android:id="@+id/tv_add_game_library_developer_text"
+                        android:layout_width="match_parent"
+                        android:textSize="18dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="@string/tv_add_game_library_developer_text" />
+
+                    <TextView
+                        android:id="@+id/tv_add_game_library_developer"
+                        android:layout_width="match_parent"
+                        android:textSize="18dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_add_game_library_accept"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/palabra_aceptar" />
+
+            <Button
+                android:id="@+id/btn_add_game_library_deny"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/palabra_cancelar" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

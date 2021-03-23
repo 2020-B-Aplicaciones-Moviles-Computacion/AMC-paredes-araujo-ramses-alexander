@@ -1,0 +1,182 @@
+<resources>
+    <string name="app_name">GameNode1</string>
+    <string name="facebook_application_id" translatable="false">910168439795807</string>
+    <string name="facebook_login_protocol_schema" translatable="false">fb910168439795807</string>
+    <string name="title_activity_actividad_mapa">Map</string>
+
+    <!---asdasdasdasdasdasdas-->
+    <!--Generales-->
+
+    <string name="mensaje_si">SI</string>
+    <string name="mensaje_no">NO</string>
+
+    <string name="palabra_retornar">REGRESAR</string>
+    <string name="palabra_agregado">Agregado: </string>
+    <string name="palabra_aceptar">ACEPTAR</string>
+    <string name="palabra_cancelar">CANCELAR</string>
+    <string name="palabra_seleccionar">SELECCIONAR</string>
+
+
+
+    <!--Caracteristicas-->
+    <string name="caracteristica_name">Nombre</string>
+    <string name="caracteristica_type">Tipo</string>
+    <string name="caracteristica_descripcion">Descripcion</string>
+    <string name="caracteristica_titulo">Titulo</string>
+    <string name="caracteristica_email">Correo</string>
+    <string name="caracteristica_fecha_nac">Fecha nacimiento</string>
+
+    <string name="caracteristica_comentario">Comentario</string>
+    <string name="caracteristica_search">Buscar</string>
+
+
+    <string name="caracteristica_seleccionar_fecha">Seleccionar fecha</string>
+    <string name="caracteristica_seleccionar_juego">Seleccionar juego</string>
+    <string name="caracteristica_seleccionar_img_perfil">Seleccionar imagen perfil</string>
+    <string name="caracteristica_seleccionar_img_fondo">Seleccionar imagen fondo</string>
+
+
+    <!--Actividad agregar comentario publicacion-->
+    <string name="tv_publication_comment_title_principal">Publicacion</string>
+    <string name="op_comentarios">COMENTARIOS</string>
+    <string name="op_añadir_comentario">NUEVO COMENTARIO</string>
+    <!--Actividad agregar juego biblioteca-->
+
+    <string name="tv_add_game_library_title">Añadir juego a libreria</string>
+    <string name="tv_add_game_library_date_text">Fecha de publicacion</string>
+    <string name="tv_add_game_library_developer_text">Desarrollador</string>
+    <!--Actividad agreagar nueva publicacion-->
+    <string name="tv_add_publication_title">Nueva publicacion</string>
+    <string name="tv_add_publication_tag_text">Etiquetas</string>
+    <string name="btn_add_publication_tag_add">Añadir</string>
+    <!--Actividad crear grupo-->
+    <string name="tv_titulo_crear_grupo">Crear grupo</string>
+    <!--Actividad crear juego-->
+    <string name="tv_create_game_title">Crear juego</string>
+    <string name="tv_create_game_developer_text">Desarrollador</string>
+    <string name="tv_create_game_sel_img_text">Seleccionar imagen juego</string>
+    <!--Actividad crear usuario-->
+    <string name="tv_titulo_crear_grupo_usuario">Crear usuario</string>
+    <!--Actividad actualizar usuario-->
+    <string name="tv_titulo_actualizar_usuario">Actualizar usuario</string>
+    <!--Actividad perfil grupo-->
+    <string name="tv_visit_group_title_principal">GRUPO</string>
+    <string name="ll_publications_group">PUBLICACIONES</string>
+    <string name="ll_new_publication_group">NUEVA PUBLICACION</string>
+    <!--Actividad perfil invitado-->
+    <string name="tv_visit_group_title_principal_profile">PERFIL</string>
+    <string name="ll_publications_libreria">LIBRERIA</string>
+    <!--Actividad seleccionar ubicacion-->
+    <string name="actividad_ubicacion_ubicacion">UBICACION</string>
+    <string name="actividad_ubicacion_ubicacion_actual">Ubicacion actual</string>
+    <!--Actividad principal-->
+
+    <string name="game_node">Game Node</string>
+    <string name="principal_ingresar">INGRESAR</string>
+    <string name="principal_acceder">ACCEDER</string>
+    <string name="principal_salir">SALIR</string>
+
+    <string name="principal_inicia_sesion">Iniciar Sesion</string>
+    <string name="principal_bienvenido">Bienvenido</string>
+
+
+
+    <!--Fragmento cuenta-->
+    <string name="fragment_account_ubicacion">UBICACION</string>
+    <string name="fragment_account_ubicacion_actual">¿Donde estoy?</string>
+    <string name="fragment_account_publicacion">PUBLICACIONES</string>
+    <string name="fragment_account_libreria">LIBRERIA</string>
+    <!--Fragment account library list-->
+    <string name="fragment_account_library_list_add_a_game">Añadir un juego</string>
+    <!--Fragment account publications-->
+    <string name="fragment_account_publications_add_a_publication">Nueva publicacion</string>
+    <!--Fragmento grupos-->
+    <string name="ll_groups_op_my_groups">MIS GRUPOS</string>
+    <string name="ll_groups_op_new_groups">NUEVOS GRUPOS</string>
+    <!--Fragmento home-->
+    <string name="fragment_home_general">GENERAL</string>
+    <string name="fragment_home_grupos">GRUPOS</string>
+    <!--Fragmento search-->
+    <string name="fragment_search_users">USUARIOS</string>
+    <string name="fragment_search_groups">GRUPOS</string>
+
+    <!-- AVISOS -->
+    <!-- Toast.makeText(this, "Fallo al crear\nIntente denuevo", Toast.LENGTH_SHORT).show() -->
+
+    <string name="subir_archivo">Archivo subido con exito!!</string>
+
+    <string name="juego_añadido_exito">El juego se agrego con exito!!\nPor favor espere</string>
+    <string name="juego_añadido_fail">Fallo al crear\nIntente denuevo</string>
+
+    <string name="nueva_publicacion_agregada_exito">La publicacion se agrego con exito!!\nPor favor Espere</string>
+    <string name="nueva_publicacion_agregada_fail">Fallo al crear\nIntente denuevo</string>
+
+    <string name="nuevo_grupo_creado_exito">Grupo creado con exito!!\nPor favor espere</string>
+    <string name="nuevo_grupo_creado_fail">Fallo al crear\nIntente denuevo</string>
+
+    <string name="nuevo_grupo_creado_dueño_agregado_exito">Usuario añadido al grupo creado con exito!!\nPor favor espere</string>
+    <string name="nuevo_grupo_creado_dueño_agregado_fail">Fallo al añadir\nIntente denuevo</string>
+
+    <string name="nuevo_juego_creado_exito">El juego se creo con exito!!\nPor favor espere</string>
+    <string name="nuevo_juego_creado_fail">Fallo al crear\nIntente denuevo</string>
+
+    <string name="nuevo_usuario_creado_exito">El usuario se creo con exito!!\nPor favor espere</string>
+    <string name="nuevo_usuario_creado_fail">Fallo al crear\nIntente denuevo</string>
+
+    <string name="usuario_actualizado_exito">El usuario se actualizo con exito!!\nPor favor espere</string>
+    <string name="usuario_actualizado_fail">Fallo al actualizar\nIntente denuevo</string>
+
+    <string name="asignacion_no_existe_validacion">El usuario no pertenece al grupo</string>
+    <string name="asignacion_no_existe">El usuario no pertenece al grupo\nEste sera agregado</string>
+    <string name="asignacion_no_existe_fail">Fallo al conocer si existe</string>
+    <string name="nuevo_asignacion_creado_exito">El usuario se agrego al grupo con exito!!\nPor favor espere</string>
+    <string name="nuevo_asignacion_creado_fail">Fallo al crear\nIntente denuevo</string>
+
+
+
+    <string name="new_publication_group_exito">Publicacion Añadida!!\nPor favor espere</string>
+    <string name="new_publication_group_fail">Fallo al añadir publicacion</string>
+
+    <string name="mensaje_eliminar_publicacion_exito">Publicacion eliminada exitosamente</string>
+    <string name="mensaje_eliminar_publicacion_exito_comentarios">Comentarios de publicacion eliminados exitosamente</string>
+
+    <string name="mensaje_comentario_creado_exito">Comentario agregado exitosamente\nPor favor espere.</string>
+    <string name="mensaje_comentario_creado_fail">Comentario agregado exitosamente\nPor favor espere.</string>
+    <string name="mensaje_eliminar_comentario_exito">Comentario eliminado exitosamente</string>
+
+    <string name="mensaje_eliminar_fail">Fallo al eliminar</string>
+
+
+
+    <!-- List adapters -->
+    <string name="eliminar_comentario">Eliminar comentario</string>
+    <string name="visit_group">Visitar grupo</string>
+    <string name="visit_profile">Visitar perfil</string>
+    <string name="view_publication">Ver publicacion</string>
+    <string name="delete_publication">Borrar publicacion</string>
+
+
+
+    <!-- ${this.getString(R.string.)}  -->
+    <!-- Alert Dialog -->
+
+
+    <string name="titulo_eliminar_publicacion">Eliminar publicacion</string>
+    <string name="titulo_eliminar_comentario">Eliminar comentario</string>
+
+    <string name="mensaje_eliminar_fail_dueño">Tu no eres el dueño</string>
+    <string name="mensaje_seguridad_eliminar">¿Estas seguro de eliminar?</string>
+    <string name="mensaje_ok">OK</string>
+
+
+    <!-- menu -->
+    <string name="menu_editar_perfil">Editar perfil</string>
+    <string name="menu_agregar_juego">Agregar juego</string>
+    <string name="menu_crear_grupo">Crear grupo</string>
+    <string name="menu_salir">Salir</string>
+
+
+
+    <string name="btn_cargar">Cargar</string>
+
+</resources>

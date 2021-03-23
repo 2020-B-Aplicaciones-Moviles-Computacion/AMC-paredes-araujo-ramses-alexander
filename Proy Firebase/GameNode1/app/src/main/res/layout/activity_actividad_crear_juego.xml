@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActividadCrearJuego">
+
+    <ScrollView
+        android:layout_marginHorizontal="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_create_game_title"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/tv_create_game_title"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/tv_create_game_nombre_texto"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/caracteristica_name"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/et_create_game_nombre"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/tv_create_game_tipo_texto"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/caracteristica_type"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/et_create_game_tipo"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text=""/>
+            <TextView
+                android:id="@+id/tv_create_game_developer_text"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/tv_create_game_developer_text"
+                android:textSize="18sp" />
+
+
+            <EditText
+                android:id="@+id/et_create_game_developer"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="" />
+            <TextView
+                android:id="@+id/tv_create_game_description_text"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/caracteristica_descripcion"
+                android:textSize="18sp" />
+
+
+            <EditText
+                android:id="@+id/et_create_game_description"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="" />
+
+
+            <TextView
+                android:id="@+id/tv_create_game_sell_date"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/caracteristica_seleccionar_fecha"
+                android:textSize="18sp" />
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="215dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:text="">
+
+                <Button
+                    android:id="@+id/btn_create_game_sel_fecha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/palabra_seleccionar" />
+
+                <TextView
+                    android:id="@+id/tv_create_game_fecha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    android:text="9/9/9999" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_create_game_sel_img_text"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/tv_create_game_sel_img_text"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                android:text="">
+
+
+                <Button
+                    android:id="@+id/btn_create_game_sel_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/palabra_seleccionar" />
+
+                <ImageView
+                    android:id="@+id/iv_create_game_img_portada"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    tools:srcCompat="@tools:sample/avatars" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout4"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout4"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+                <Button
+                    android:id="@+id/btn_crear_nuevo_juego"
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:text="@string/palabra_aceptar" />
+
+                <Button
+                    android:id="@+id/btn_cancelar_crear_juego"
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:text="@string/palabra_cancelar" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
