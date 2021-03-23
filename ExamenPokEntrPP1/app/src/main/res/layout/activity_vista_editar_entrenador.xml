@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activEntren.VistaEditarEntrenador">
+
+
+    <TextView
+        android:id="@+id/tv_titulo_editar_entrenador"
+        android:layout_width="243dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/editar_entrenador_titulo"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="215dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/crear_entrenador_id"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_titulo_editar_entrenador"
+        app:layout_constraintStart_toStartOf="@+id/tv_titulo_editar_entrenador"
+        app:layout_constraintTop_toBottomOf="@+id/tv_titulo_editar_entrenador"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/et_editar_entrenador_id"
+        android:layout_width="215dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/crear_entrenador_id_help"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tv_editar_nombre_entrenador"
+        android:layout_width="215dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/crear_entrenador_nombre"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/et_editar_entrenador_id"
+        app:layout_constraintStart_toStartOf="@+id/et_editar_entrenador_id"
+        app:layout_constraintTop_toBottomOf="@+id/et_editar_entrenador_id"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/et_editar_entrenador_nombre"
+        android:layout_width="215dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/crear_entrenador_nombre_help"
+        app:layout_constraintEnd_toEndOf="@+id/tv_editar_nombre_entrenador"
+        app:layout_constraintStart_toStartOf="@+id/tv_editar_nombre_entrenador"
+        app:layout_constraintTop_toBottomOf="@+id/tv_editar_nombre_entrenador"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="215dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/crear_entrenador_genero"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/et_editar_entrenador_nombre"
+        app:layout_constraintStart_toStartOf="@+id/et_editar_entrenador_nombre"
+        app:layout_constraintTop_toBottomOf="@+id/et_editar_entrenador_nombre"
+        tools:ignore="MissingConstraints" />
+
+    <RadioGroup
+        android:id="@+id/radg_entrenador_genero"
+        android:layout_width="183dp"
+        android:layout_height="71dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:ignore="MissingConstraints">
+
+        <RadioButton
+            android:id="@+id/rb_entrenador_M"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="@string/crear_entrenador_genero_hombre" />
+
+        <RadioButton
+            android:id="@+id/rb_entrenador_F"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="@string/crear_entrenador_genero_mujer" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="215dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/crear_entrenador_fechaNac"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/radg_entrenador_genero"
+        app:layout_constraintStart_toStartOf="@+id/radg_entrenador_genero"
+        app:layout_constraintTop_toBottomOf="@+id/radg_entrenador_genero"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="281dp"
+        android:layout_height="51dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/btn_editar_entrenador_sel_fecha"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/crear_entrenador_fechaNac_but" />
+
+        <TextView
+            android:id="@+id/tv_editar_entrenador_fechaNac"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:text="@string/crear_entrenador_fechaNac_help" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="252dp"
+        android:layout_height="92dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/sw_editar_entrenador_activo"
+        app:layout_constraintStart_toStartOf="@+id/sw_editar_entrenador_activo"
+        app:layout_constraintTop_toBottomOf="@+id/sw_editar_entrenador_activo"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/btn_aceptar_editar_entrenador"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="@string/btn_aceptar" />
+
+        <Button
+            android:id="@+id/btn_cancelar_editar_entrenador"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="@string/btn_cancelar" />
+
+    </LinearLayout>
+
+    <Switch
+        android:id="@+id/sw_editar_entrenador_activo"
+        android:layout_width="166dp"
+        android:layout_height="39dp"
+        android:layout_weight="1"
+        android:text="@string/editar_entrenador_activo"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
